@@ -4,6 +4,7 @@ import toast from "react-hot-toast";
 
 export default function Customers() {
 
+    const role = localStorage.getItem("role");
     const [customers, setCustomers] = useState([]);
     const [search,setSearch] = useState("");
 
@@ -109,11 +110,11 @@ export default function Customers() {
                     }
                 />
 
-                <button
-                    className="bg-blue-600 text-white rounded p-2 col-span-4"
-                >
-                    Add Customer
-                </button>
+                {role !== "viewer" && (
+                    <button>
+                        Add Customer
+                    </button>
+                )}
 
             </form>
             
