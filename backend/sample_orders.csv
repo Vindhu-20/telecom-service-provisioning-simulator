@@ -1,0 +1,6 @@
+customer_id,service_type,bandwidth,qos,location_a,location_b,priority
+CUST001,MPLS,100 Mbps,Gold,Hyderabad,Bangalore,HIGH
+CUST002,VPRN,1 Gbps,Silver,Delhi,Mumbai,MEDIUM
+CUST003,Internet,50 Mbps,Bronze,Chennai,Pune,LOW
+CUST004,E-Line,500 Mbps,Gold,Kolkata,Hyderabad,HIGH
+CUST005,EVPN,2 Gbps,Platinum,Mumbai,Delhi,HIGH
