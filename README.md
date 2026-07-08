@@ -1,16 +1,31 @@
 # 🚀 Telecom OSS Service Provisioning Simulator
 
-![GitHub last commit](https://img.shields.io/github/last-commit/vindhu-20/telecom-service-provisioning-simulator)
-![GitHub repo size](https://img.shields.io/github/repo-size/vindhu-20/telecom-service-provisioning-simulator)
-![GitHub stars](https://img.shields.io/github/stars/vindhu-20/telecom-service-provisioning-simulator?style=social)
-![Python](https://img.shields.io/badge/Python-3.12+-blue)
-![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green)
-![React](https://img.shields.io/badge/React-19-61DAFB)
-![MongoDB](https://img.shields.io/badge/MongoDB-Database-success)
-![JWT](https://img.shields.io/badge/Auth-JWT-orange)
+![GitHub last commit](https://img.shields.io/github/last-commit/Vindhu-20/telecom-service-provisioning-simulator)
+![GitHub repo size](https://img.shields.io/github/repo-size/Vindhu-20/telecom-service-provisioning-simulator)
+![GitHub stars](https://img.shields.io/github/stars/Vindhu-20/telecom-service-provisioning-simulator?style=social)
+![GitHub issues](https://img.shields.io/github/issues/Vindhu-20/telecom-service-provisioning-simulator)
 ![License](https://img.shields.io/badge/License-MIT-blue)
 ![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
 ![Platform](https://img.shields.io/badge/Platform-Telecom%20OSS-blueviolet)
+
+![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?logo=tailwindcss&logoColor=white)
+![MongoDB Atlas](https://img.shields.io/badge/MongoDB_Atlas-47A248?logo=mongodb&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT-000000?logo=jsonwebtokens&logoColor=white)
+![OAuth2](https://img.shields.io/badge/OAuth2-4285F4?logo=auth0&logoColor=white)
+![Axios](https://img.shields.io/badge/Axios-5A29E4?logo=axios&logoColor=white)
+![Recharts](https://img.shields.io/badge/Recharts-FF6384)
+![Render](https://img.shields.io/badge/Render-46E3B7?logo=render&logoColor=black)
+![Vercel](https://img.shields.io/badge/Vercel-000000?logo=vercel&logoColor=white)
+![JWT Authentication](https://img.shields.io/badge/Auth-JWT-success)
+![RBAC](https://img.shields.io/badge/RBAC-Implemented-blue)
+![TMF641](https://img.shields.io/badge/TMF641-Supported-orange)
+![MongoDB Atlas](https://img.shields.io/badge/Cloud-MongoDB%20Atlas-green)
+![REST API](https://img.shields.io/badge/API-REST-success)
+![Swagger](https://img.shields.io/badge/API_Docs-Swagger-85EA2D?logo=swagger)
+![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)
 
 A **Full Stack Telecom OSS (Operations Support System)** application that simulates the complete lifecycle of telecom service provisioning.
 
@@ -26,6 +41,23 @@ The application enables telecom operators to create customers, place service ord
 - Interactive Dashboard with Analytics
 - Failure Simulation & Audit Logging
 - React + FastAPI + MongoDB
+
+| Feature | Status |
+|---------|--------|
+| JWT Authentication | ✅ |
+| RBAC | ✅ |
+| Customer Management | ✅ |
+| Order Management | ✅ |
+| Workflow Engine | ✅ |
+| Inventory Management | ✅ |
+| Dashboard | ✅ |
+| Reports | ✅ |
+| Failure Simulation | ✅ |
+| Audit Logging | ✅ |
+| TMF641 Generation | ✅ |
+| MongoDB Atlas | ✅ |
+| Render Deployment | ✅ |
+| Vercel Deployment | ✅ |
 
 # Table of Contents
 
@@ -77,6 +109,14 @@ The application allows users to
 - Visualize Network Topology
 
 The project follows a modular architecture using FastAPI for backend APIs and React for the frontend dashboard.
+
+---
+
+# Live Demo
+
+- **Frontend:** https://telecom-service-provisioning-simula.vercel.app
+- **Backend API:** https://telecom-service-provisioning-simulator.onrender.com
+- **Swagger UI:** https://telecom-service-provisioning-simulator.onrender.com/docs
 
 ---
 
@@ -426,7 +466,7 @@ telecom-service-provisioning-simulator
 │   ├── server.py
 │   ├── seed.py
 │   ├── requirements.txt
-│   └── .env
+│   └── .env.example
 │
 ├── frontend
 │
@@ -438,7 +478,9 @@ telecom-service-provisioning-simulator
 │   ├── layouts
 │   ├── pages
 │   ├── App.jsx
-│   └── main.jsx
+|   ├── main.jsx 
+│   └── .env.example
+|   
 │
 ├── screenshots
 │
@@ -542,15 +584,56 @@ http://localhost:5173
 
 # Environment Variables
 
-Create a `.env` file inside the backend directory.
+## Backend
+
+Copy
+
+```text
+backend/.env.example
+```
+
+to
+
+```text
+backend/.env
+```
+
+Example
 
 ```env
 MONGO_URI=mongodb://localhost:27017
+
 DATABASE_NAME=telecom_provisioning
 
 SECRET_KEY=your-secret-key
+
 ALGORITHM=HS256
+
 ACCESS_TOKEN_EXPIRE_MINUTES=60
+
+CORS_ORIGINS=http://localhost:5173
+```
+
+---
+
+## Frontend
+
+Copy
+
+```text
+frontend/.env.example
+```
+
+to
+
+```text
+frontend/.env
+```
+
+Example
+
+```env
+VITE_API_URL=http://localhost:8000
 ```
 
 ---
@@ -856,11 +939,36 @@ npm run build
 
 3. Set Environment Variables
 
+4. Deploy
+
+
+## Backend (Render)
+
+Environment Variables
+
 ```env
-VITE_API_URL=https://your-backend-url.onrender.com
+MONGO_URI=<MongoDB Atlas URI>
+
+DATABASE_NAME=telecom_provisioning
+
+SECRET_KEY=<your-secret-key>
+
+ALGORITHM=HS256
+
+ACCESS_TOKEN_EXPIRE_MINUTES=60
+
+CORS_ORIGINS=https://telecom-service-provisioning-simula.vercel.app
 ```
 
-4. Deploy
+---
+
+## Frontend (Vercel)
+
+Environment Variables
+
+```env
+VITE_API_URL=https://telecom-service-provisioning-simulator.onrender.com
+```
 
 ---
 
